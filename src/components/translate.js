@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Translate({ language, text }) {
+const url = "";
   const [translated] = useTranslation(text, language);
 
   return (
@@ -49,10 +50,11 @@ const debounce = (fn) => {
 };
 
 const doTranslation = debounce(
+
   async (input, languageCode, cancelToken, callback) => {
     try {
       const { data } = await axios.post(
-        "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA",
+       url,
         {
           q: input,
           target: languageCode
