@@ -47,7 +47,7 @@ const debounce = (fn) => {
     }, 300);
   };
 };
-const url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA";
+const url = "https://translation.googleapis.com/language/translate/v2?key=";
 
 const doTranslation = debounce(
 
