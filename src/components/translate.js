@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Translate({ language, text }) {
-const url = "";
   const [translated] = useTranslation(text, language);
-
+ console.log(text)
   return (
     <div className="translate">
       <label className="label">Output</label>
@@ -48,6 +47,7 @@ const debounce = (fn) => {
     }, 300);
   };
 };
+const url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf0Xy0OnhxlduyEt3K8zP-sOuu-l_u6uA";
 
 const doTranslation = debounce(
 
@@ -61,7 +61,7 @@ const doTranslation = debounce(
         },
         { cancelToken: cancelToken.token }
       );
-
+    console.log({data})
       callback(data.data.translations[0].translatedText);
     } catch (err) {
       callback("");
